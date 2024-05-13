@@ -26,7 +26,7 @@ stock set_item_float ( itemid, rows[], Float:value )
         return 1;
     
     new query [ 144 ];
-    format ( query, sizeof query, "UPDATE items SET %s='%f' WHERE id=%i", rows, value, inventory_items [ itemid ] [ itemID ] );
+    format ( query, sizeof query, "UPDATE items SET `%s`='%f' WHERE id=%i", rows, value, inventory_items [ itemid ] [ itemID ] );
     mysql_tquery ( dbHandle, query );
     return 1;
 }
@@ -34,7 +34,7 @@ stock set_item_float ( itemid, rows[], Float:value )
 stock set_player_int ( playerid, rows[], value )
 {
     new query [ 144 ];
-    format ( query, sizeof query, "UPDATE player SET %s='%f' WHERE id=%i", rows, value, PlayerInfo [ playerid ] [ pID ] );
+    format ( query, sizeof query, "UPDATE player SET %s=%i WHERE id=%i", rows, value, PlayerInfo [ playerid ] [ pID ] );
     mysql_tquery ( dbHandle, query );
     return 1;
 }
